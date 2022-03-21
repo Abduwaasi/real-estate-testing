@@ -15,7 +15,7 @@ const Banner =({imageUrl,purpose,title1,title2,desc1,desc2,linkName,buttonText})
         <Text color="grey.700" fontSize="lg" py="3">{desc1} <br />{desc2}</Text>
         <Button fontSize="lg" p="2">
             <Link href={linkName}><a>{buttonText}</a></Link>
-        </Button>
+        </Button> 
     </Box>
   </Flex>
 )

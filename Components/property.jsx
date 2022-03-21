@@ -7,8 +7,8 @@ import {BsGridFill} from "react-icons/bs"
 import {GoVerified} from "react-icons/go"
 import DefaultImage from "../assets/Image/house.jpg"
 
-const Property=({property:{coverPhoto,price,rentFrequency,rooms, title,baths,area,agency,isVerified,externalId}})=>(
- <Link href={`/property/${externalId}`} passHref>
+const Property=({property: {coverPhoto,price,rentFrequency,rooms, title,baths,area,agency,isVerified,externalID}})=>{
+    return <Link href={`/property/${externalID}`} passHref>
     <Flex flexWrap="wrap" padding="5" paddingTop="0" width="420px" justifyContent="flex-stat" cursor="pointer">
       <Box>
           <Image src={coverPhoto ? coverPhoto.url :DefaultImage} width="400px" height="250px" alt ="house"/>
@@ -26,9 +26,13 @@ const Property=({property:{coverPhoto,price,rentFrequency,rooms, title,baths,are
          <Flex justifyContent="space-between" alignItems="center" width="250px" color="blue.500">
             {rooms} <FaBed/> | {baths} <FaBath/> {millify(area)} sqft <BsGridFill/>
          </Flex>
+         <Text fontSize="lg">{title.length>30 ?`${title.substring(0,30)}...`:title}</Text>
       </Box>
     </Flex>
  </Link>
-)
+ 
+}
+ 
+
 
 export default Property
